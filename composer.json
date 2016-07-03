@@ -1,12 +1,12 @@
 {
-  "name": "MaslennikovYV/rest",
+  "name": "maslennikov-yv/rest",
   "type": "library",
   "keywords": ["RESTful","api","rest","PSR-7"],
   "license": "MIT",
   "authors": [
     {
       "name": "Yuriy Maslennikov",
-      "email": "MaslennikovYV@gmail.com",
+      "email": "maslennikovyv@gmail.com",
       "role": "Developer"
     }
   ],
