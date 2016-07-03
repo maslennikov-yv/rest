@@ -94,25 +94,20 @@ class Action
     {
 
         $method = $request->getMethod();
-
         if (!is_string($method)) {
             throw new ApiException(405, 'Unsupported HTTP method; must be a string, received ' . (is_object($method) ? get_class($method) : gettype($method)));
         }
-
         $method = strtoupper($method);
-
-        $id = $request->getAttribute(static::PK);
-        $params = $request->getQueryParams();
 
         /** @var Resource $resource */
         $resource = $this->getResource();
 
         if ('GET' === $method) {
 
-            if ($id) {
-                $result = $resource->fetch($id, $params);
+            if ($id = $request->getAttribute(static::PK)) {
+                $result = $resource->fetch($id, $request->getQueryParams();
             } else {
-                $result = $resource->fetchAll($params);
+                $result = $resource->fetchAll($request->getQueryParams());
             }
 
         } elseif ('POST' === $method) {
