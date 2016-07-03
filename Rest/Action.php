@@ -105,7 +105,7 @@ class Action
         if ('GET' === $method) {
 
             if ($id = $request->getAttribute(static::PK)) {
-                $result = $resource->fetch($id, $request->getQueryParams();
+                $result = $resource->fetch($id, $request->getQueryParams());
             } else {
                 $result = $resource->fetchAll($request->getQueryParams());
             }
