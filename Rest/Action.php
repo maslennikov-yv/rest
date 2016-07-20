@@ -116,15 +116,15 @@ class Action
 
         } elseif ('PUT' === $method) {
 
-            $result = $resource->update($id, $request->getParsedBody());
+            $result = $resource->update($request->getAttribute(static::PK), $request->getParsedBody());
 
         } elseif ('PATCH' === $method) {
 
-            $result = $resource->patch($id, $request->getParsedBody());
+            $result = $resource->patch($request->getAttribute(static::PK), $request->getParsedBody());
 
         } elseif ('DELETE' === $method) {
 
-            $result = $resource->delete($id);
+            $result = $resource->delete($request->getAttribute(static::PK));
 
         } else {
 
